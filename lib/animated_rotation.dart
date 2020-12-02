@@ -26,7 +26,7 @@ class AnimatedRotation extends ImplicitlyAnimatedWidget {
 
   /// The widget to rotate
   final Widget child;
-  final Ofsset origin1;
+  final Offset origin1;
 
   @override
   _AnimatedRotationState createState() => _AnimatedRotationState();
