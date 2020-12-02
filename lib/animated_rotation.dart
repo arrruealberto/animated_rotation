@@ -15,6 +15,7 @@ class AnimatedRotation extends ImplicitlyAnimatedWidget {
     Key key,
     @required this.angle,
     this.child,
+    this.origin1,
     Curve curve = Curves.linear,
     Duration duration = const Duration(seconds: 1),
   })  : assert(angle != null),
@@ -25,6 +26,7 @@ class AnimatedRotation extends ImplicitlyAnimatedWidget {
 
   /// The widget to rotate
   final Widget child;
+  final Ofsset origin1;
 
   @override
   _AnimatedRotationState createState() => _AnimatedRotationState();
@@ -52,6 +54,7 @@ class _AnimatedRotationState extends AnimatedWidgetBaseState<AnimatedRotation> {
     return Transform.rotate(
       angle: _degToRad(_angle.evaluate(animation)),
       child: widget.child,
+      origin: widget.origin1,
     );
   }
 
